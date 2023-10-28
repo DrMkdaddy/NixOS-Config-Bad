@@ -48,7 +48,7 @@
     nerdfonts
     kitty
     waybar
-    dunst 
+    dunst
     grimblast
     python3
     wl-clipboard
@@ -68,15 +68,24 @@
   # Enable home-manager and git
   programs = {
     home-manager.enable = true;
-    git.enable = true;
-    starship.enable = true; 
+    git = {
+      enable = true;
+      userName = "Noor Mkdad";
+      userEmail = "alph4nir@riseup.net";
+      aliases = {
+        ci = "commit";
+        co = "checkout";
+        s = "status";
+      };
+    }; 
+    starship.enable = true;
     neovim = {
       enable = true;
       defaultEditor = true;
     };
     fish = {
     enable = true;
-    shellInit = 
+    shellInit =
     ''
         source (starship init fish --print-full-init | psub)
         zoxide init fish | source
