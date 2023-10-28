@@ -15,7 +15,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     # ./anyrun.nix
-    ./anyrun2.nix
+    ./anyrun
   ];
 
   nixpkgs = {
@@ -102,8 +102,7 @@
   };
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
-  
-    gtk = {
+  gtk = {
     enable = true;
     iconTheme = {
       name = "fluent-icon-theme";
