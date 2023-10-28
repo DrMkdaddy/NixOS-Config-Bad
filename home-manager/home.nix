@@ -71,7 +71,6 @@
     home-manager.enable = true;
     git = {
       enable = true;
-      lfs.enable = true;
       userName = "Noor Mkdad";
       userEmail = "alph4nir@riseup.net";
       aliases = {
