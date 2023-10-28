@@ -105,8 +105,8 @@
     gtk = {
     enable = true;
     iconTheme = {
-      name = "yaru-dark-icon-theme";
-      package = pkgs.yaru-theme;
+      name = "fluent-icon-theme";
+      package = pkgs.fluent-icon-theme;
     };
     theme = {
       name = "yaru-dark";

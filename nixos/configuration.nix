@@ -103,6 +103,16 @@
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
     };
   };
+    services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "${pkgs.hyprland}/bin/Hyprland";
+        user = "noor";
+      };
+    default_session = initial_session;
+    };
+  };
   # Disable GNOMEs power management
   services.power-profiles-daemon.enable = false;
   # Enable powertop
