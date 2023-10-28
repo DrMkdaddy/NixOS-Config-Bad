@@ -1,13 +1,14 @@
+# Stolen from https://github.com/NotAShelf/nyx/ will add more stuff later. Still trying to figure this out
 {
   inputs,
   inputs',
-  osConfig,
+  config,
   lib,
   ...
 }: let
-  device = osConfig.modules.device;
-  env = osConfig.modules.usrEnv;
-  sys = osConfig.modules.system;
+  device = config.modules.device;
+  env = config.modules.usrEnv;
+  sys = config.modules.system;
   acceptedTypes = ["laptop" "desktop" "hybrid" "lite"];
 in {
   imports = [inputs.anyrun.homeManagerModules.default];
@@ -99,7 +100,7 @@ in {
         '';
 
         "nixos-options.ron".text = let
-          nixos-options = osConfig.system.build.manual.optionsJSON + "/share/doc/nixos/options.json";
+          nixos-options = config.system.build.manual.optionsJSON + "/share/doc/nixos/options.json";
           neovim-flake-options = inputs'.neovim-flake.packages.docs-json + "/share/doc/neovim-flake/options.json";
           options = builtins.toJSON {
             ":nix" = [nixos-options];
