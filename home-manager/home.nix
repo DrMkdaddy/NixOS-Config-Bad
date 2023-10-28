@@ -63,6 +63,7 @@
     gh
     xdg-desktop-portal-hyprland
     firefox
+    yaru-theme
   ];
   fonts.fontconfig.enable = true;
 
@@ -100,7 +101,33 @@
   };
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
-
+  
+    gtk = {
+    enable = true;
+    iconTheme = {
+      name = "yaru-dark";
+      package = pkgs.papirus-icon-theme;
+    };
+    theme = {
+      name = "yaru-dark";
+      package = pkgs.palenight-theme;
+    };
+    cursorTheme = {
+      name = "yaru-cursor";
+      package = pkgs.numix-cursor-theme;
+    };
+    gtk3.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+      '';
+    };
+    gtk4.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+      '';
+    };
+  };
+  home.sessionVariables.GTK_THEME = "yaru-dark";
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.05";
 }
