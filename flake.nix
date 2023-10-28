@@ -30,6 +30,7 @@
     self,
     nixpkgs,
     home-manager,
+    anyrun,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -48,6 +49,7 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
+        system.packages = [ anyrun.packages.nixos.anyrun ];
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
         modules = [./nixos/configuration.nix];
