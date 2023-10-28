@@ -32,9 +32,11 @@
     home-manager,
     anyrun,
     ...
-  } @ inputs: let
+  } @ inputs: 
+  let
     inherit (self) outputs;
   in {
+    system = ["x86_64-linux"];
     nixConfig = {
       extra-substituters = [
         "https://anyrun.cachix.org"
@@ -49,6 +51,7 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
+        system.packages = [ anyrun.packages.${system}.anyrun ];
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
         modules = [./nixos/configuration.nix];
