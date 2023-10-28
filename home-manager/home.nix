@@ -60,6 +60,8 @@
     brightnessctl
     nil
     element-desktop-wayland
+    gh
+    xdg-desktop-portal-hyprland
   ];
   fonts.fontconfig.enable = true;
 
