@@ -14,8 +14,8 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-    # ./anyrun.nix
-    ./anyrun
+    ./anyrun.nix
+    # ./anyrun
   ];
 
   nixpkgs = {
