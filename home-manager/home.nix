@@ -106,15 +106,15 @@
     enable = true;
     iconTheme = {
       name = "yaru-dark";
-      package = pkgs.papirus-icon-theme;
+      package = pkgs.arc-icon-theme;
     };
     theme = {
       name = "yaru-dark";
-      package = pkgs.palenight-theme;
+      package = pkgs.yaru-theme;
     };
     cursorTheme = {
       name = "yaru-cursor";
-      package = pkgs.numix-cursor-theme;
+      package = pkgs.qogir-cursor-theme;
     };
     gtk3.extraConfig = {
       Settings = ''
